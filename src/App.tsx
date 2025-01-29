@@ -1,17 +1,23 @@
-
+import React from 'react';
 import './App.css'
-import Fetch from './Fetch'
-import { QueryClient,QueryClientProvider } from '@tanstack/react-query'
+// import EvenFetching from './EvenFetching';
+
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import Fetch , {DataFetch}  from './Fetch';
+import CreateUserComponent,{Updater} from './Update';
+
 function App() {
 
-const queryClient = new QueryClient();
   return (
     <>
-    <QueryClientProvider client={queryClient}>
-      <Fetch />
-      </QueryClientProvider>
+   <Fetch />
+    <DataFetch />
+    <h3>useMutation</h3>
+    <Updater />
+    <CreateUserComponent />
     </>
   )
 }
 
 export default App
+

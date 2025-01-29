@@ -1,9 +1,9 @@
-import {useState,useEffect} from 'react';
-type Todo = {
-    id: number;
-    title: string;
-    isCompleted: boolean;
-  };
+// import {useState,useEffect} from 'react';
+// type Todo = {
+//     id: number;
+//     title: string;
+//     isCompleted: boolean;
+//   };
 // const useFetch = (url:string) =>{
 // const[data,setData] = useState<Todos[]>([]);
 // const fetchData = async () =>{
@@ -30,10 +30,13 @@ type Todo = {
 // export default useFetch;
 
 //fetch function
-const fetchTodos = async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/todos/');
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
+
+
+
+
+
+ export type Todo = {
+    id: number;
+    title: string;
+    completed: boolean;
   };
