@@ -29,7 +29,6 @@ const Updater : React.FC = () =>{
       onSettled:() =>{
         console.log("settling");
       },
-
     })
     const handleUpdate= ()=>{
        const newUser:user = {id: 1 , title:"Jwalitha",completed:true}
