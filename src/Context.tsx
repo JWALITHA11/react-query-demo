@@ -1,9 +1,9 @@
  import { createContext,useState } from "react";
  import UserInput from "./UserInput";
- import { DisplayUser } from "./DisplayUser";
+//  import { DisplayUser } from "./DisplayUser";
     export const contextProvider = createContext({
         user:" ",
-        setUser:(value:string) =>{}
+        setUser:(_value:string) =>{}
     });
  
  const  Context  = () =>{

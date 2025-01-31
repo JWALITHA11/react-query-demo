@@ -5,7 +5,7 @@ const Project:React.FC = () => {
         email:'',
         password:''
      })
-  const handleChange = (e) =>{
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
     const{name,value}=e.target;
     setData({...data,[name]:value});
   };

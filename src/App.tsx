@@ -4,9 +4,9 @@ import './App.css'
 // import EvenFetching from './EvenFetching';
 
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import Fetch , {DataFetch}  from './Fetch';
+// import Fetch , {DataFetch}  from './Fetch';
 import Project from './Project';
-import CreateUserComponent,{Updater} from './Update';
+// import CreateUserComponent,{Updater} from './Update';
 import Source from './Source'; 
 import Navbar from './Navbar';
 

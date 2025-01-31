@@ -1,5 +1,5 @@
-import React, { createContext } from 'react'
-import { useEffect,useRef,useState,useContext,useMemo,useCallback } from 'react'
+import React from 'react'
+import { useEffect,useRef,useState,useMemo,useCallback } from 'react'
 import Context  from './Context'
 const Source = () => {
 useEffect(
@@ -136,6 +136,7 @@ export const ChildComponent: React.FC<{ increment: () => void }> = React.memo(({
     return(
         <>
         <button onClick={handleChange}>Click here</button>
+        <button onClick={increment}>Add from Child</button>
         </>
     )
     // return ;
@@ -166,6 +167,7 @@ export const ExampleChild : React.FC <{add :()=>void}> = ({add}) =>{
 console.log("I am the child component");
 return(
     <>
+    <button onClick={add} >+ from child</button>
     </>
 )
 }
