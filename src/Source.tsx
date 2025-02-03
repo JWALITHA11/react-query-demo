@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect,useRef,useState,useMemo,useCallback,useLayoutEffect } from 'react'
 import Context  from './Context'
 import Reducer, { Reducer2 } from './Reducer'
-import { DataFetch } from './Fetch'
+// import { DataFetch } from './Fetch'
 type ResponseId = {
   id:number;
 }

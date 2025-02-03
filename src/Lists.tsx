@@ -58,6 +58,7 @@ const Lists = (props : FruitListProps) =>{
           
         </div>
         <NumList numbers = {nums} />
+        <Details data={details} />
         </>
     );
     

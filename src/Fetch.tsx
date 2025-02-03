@@ -1,7 +1,7 @@
 // // import useFetch from "./useFetch";
 // import React from 'react';
 import { useQuery } from "@tanstack/react-query";
-import { FetchById } from "./Practice";
+// import { FetchById } from "./Practice";
 // import { UNSAFE_getSingleFetchDataStrategy } from "react-router-dom";
 
 // import { Todo } from './useFetch';
