@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Todos } from "./Fetch";
-import { DataFetch } from "./Fetch";
+// import { DataFetch } from "./Fetch";
 const fetchData = () =>{
     return fetch('https://jsonplaceholder.typicode.com/todos/')
     .then(response =>{return response.json()})
