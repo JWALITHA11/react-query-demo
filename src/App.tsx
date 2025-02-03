@@ -4,13 +4,13 @@ import './App.css'
 // import EvenFetching from './EvenFetching';
 
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import Fetch , {DataFetch}  from './Fetch';
+// import Fetch , {DataFetch}  from './Fetch';
 import Project from './Project';
 // import CreateUserComponent,{Updater} from './Update';
 import Source from './Source'; 
 import Navbar from './Navbar';
-import Practice from './Practice';
-import { FetchById } from './Practice';
+// import Practice from './Practice';
+// import { FetchById } from './Practice';
 import Reducer from './Reducer';
 function App() {
 
@@ -32,7 +32,7 @@ function App() {
     </BrowserRouter>
    {/* <Practice /> */}
    {/* <FetchById fetchId={14} /> */}
-   {/* <Reducer /> */}
+   <Reducer />
     </>
   )
 }

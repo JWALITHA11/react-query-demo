@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect,useRef,useState,useMemo,useCallback } from 'react'
 import Context  from './Context'
+import Reducer from './Reducer'
 type ResponseId = {
   id:number;
 }
@@ -40,6 +41,7 @@ useEffect(
  <Memo />
  <CallbackFunction />
  <ExampleCounter />
+ <Reducer />
  <p>Check the console for the result <button className="btn"onClick={handleClick}>Click</button></p>
  
   </div>
