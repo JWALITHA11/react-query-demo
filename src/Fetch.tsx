@@ -1,7 +1,7 @@
 // // import useFetch from "./useFetch";
 // import React from 'react';
 import { useQuery } from "@tanstack/react-query";
-
+import { FetchById } from "./Practice";
 // import { UNSAFE_getSingleFetchDataStrategy } from "react-router-dom";
 
 // import { Todo } from './useFetch';
@@ -88,6 +88,9 @@ return(
   ):(
     <h1>No data Available</h1>
   )}
+
+<FetchById fetchId={14} />
+
 
   </div>
 

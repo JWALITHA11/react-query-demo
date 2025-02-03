@@ -9,6 +9,7 @@ import Project from './Project';
 // import CreateUserComponent,{Updater} from './Update';
 import Source from './Source'; 
 import Navbar from './Navbar';
+import Practice from './Practice';
 // import Practice from './Practice';
 // import { FetchById } from './Practice';
 // import Reducer from './Reducer';
@@ -27,11 +28,11 @@ function App() {
     <Routes>
       <Route path='/source' element={<Source />} />
       <Route path='/project' element={<Project />} />
-     
+     <Route path = '/practice' element={<Practice />} />
     </Routes>
     </BrowserRouter>
    {/* <Practice /> */}
-   {/* <FetchById fetchId={14} /> */}
+   {/*  */}
    
     </>
   )
