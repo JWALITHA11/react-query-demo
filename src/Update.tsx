@@ -40,6 +40,7 @@ const Updater : React.FC = () =>{
       <p>Updating User ... Check Console</p>
       <button onClick={handleUpdate}>update User</button>
      
+      <CreateUserComponent/>
         </>
     )
 }
@@ -69,6 +70,9 @@ const CreateUserComponent: React.FC = () => {
     },
     onError: (error) => {
       console.error('Error creating user:', error);
+    },
+    onSettled:() =>{
+      console.log("settling");
     },
   });
 

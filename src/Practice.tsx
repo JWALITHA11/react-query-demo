@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Todos } from "./Fetch";
-// import { DataFetch } from "./Fetch";
+import Fetch,{ DataFetch } from "./Fetch";
 const fetchData = () =>{
     return fetch('https://jsonplaceholder.typicode.com/todos/')
     .then(response =>{return response.json()})
@@ -21,8 +21,15 @@ const Practice = () => {
             <li key={posts.id}>  {posts.title}</li>
         ))
         }
+      
     </ol>
+    <div>
+    <DataFetch />
     <FetchById fetchId={14} />
+    {/* <Fetch />  */}
+    <Fetch />
+    </div>
+    
     </>
   )
 }
@@ -56,7 +63,7 @@ const FetchById:React.FC<ids> = ({fetchId}) =>{
     return(
         <>
         <div>
-            <h1>{sampleVal.data?.title}</h1>
+            <h4>{sampleVal.data?.title}</h4>
         </div>
         </>
     )

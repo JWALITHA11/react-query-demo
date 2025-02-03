@@ -67,13 +67,14 @@ const POSTS = [{ID:1 ,TITLE:"JOHN"},{ID:2 , TITLE:"SANDRA"}]
 
 const Fetch :React.FC = () =>{
   const postQuery = useQuery({
-    queryKey:["posts"],
+    queryKey:["users"],
     //queryFn:() =>wait(3000).then(()=>[...POSTS])
     queryFn:async () =>{
       await new Promise(resolve =>{setTimeout(resolve,3000)});
       return [...POSTS]
     }
   })
+  console.log(postQuery);
   if(postQuery.isLoading)
     return <h1>Loading for the users... </h1>
   if(postQuery.error)
@@ -89,7 +90,7 @@ return(
     <h1>No data Available</h1>
   )}
 
-<FetchById fetchId={14} />
+{/* <FetchById fetchId={14} /> */}
 
 
   </div>
@@ -103,7 +104,9 @@ return(
 
 
 export default Fetch;
- export type Todos = {id:number;title:string}
+
+
+ export type Todos = {id:number;title:string;completed:boolean}
 
 // const fetchData = async () =>{
 //   const response = await axios.get('https://jsonplaceholder.typicode.com/todos/');
@@ -127,7 +130,7 @@ const DataFetch : React.FC = () =>{
 <>
 {data?data.map((post:Todos)=>(
   <div key={post.id}>
-    <p>{post.id} {post.title}</p></div>
+    <p>{post.id}. {post.completed?"yes":"no"}</p></div>
 )): <p>No data found</p>
 } 
 

@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect,useRef,useState,useMemo,useCallback,useLayoutEffect } from 'react'
 import Context  from './Context'
 import Reducer, { Reducer2 } from './Reducer'
+import { DataFetch } from './Fetch'
 type ResponseId = {
   id:number;
 }
@@ -45,6 +46,8 @@ useEffect(
  <Reducer2 />
  <UseLayoutEffectExample/>
  <UseEffectExample/>
+ <Effect />
+
  <p>Check the console for the result <button className="btn"onClick={handleClick}>Click</button></p>
  
   </div>
@@ -208,4 +211,40 @@ const UseEffectExample: React.FC = () => {
     </div>
   );
 };
-export{UseEffectExample}
+export{UseEffectExample};
+
+const Effect :React.FC = () =>{
+
+  const[width,setWidth] = useState(window.innerWidth);
+  const[height,setHeight] = useState(window.innerHeight);
+
+  
+  
+
+useEffect(() =>{
+  window.addEventListener("resize",handleResize);
+  console.log("EVENT LISTENER IS ADDED");
+
+  return () => {
+      window.removeEventListener("resize",handleResize);
+      console.log("EVENT LISTENER IS REMOVED");
+  }
+});
+
+function handleResize(){
+  setWidth(window.innerWidth);
+  setHeight(window.innerHeight);
+}
+
+return(
+  <div className='cart'>
+      {/* <h2>{count} times uisng useEffect</h2> */}
+      {/* <h2>{name}</h2> */}
+      {/* <button type="button" onClick={() => setCount(count+1)} >UseEffect - Button count = {count}</button> */}
+ <h4>Dimensions : </h4>
+  <p> Window width {width} px</p>
+  <p> Window height {height} px</p>
+  </div>
+)
+}
+export{Effect};
