@@ -100,7 +100,7 @@ return(
 
 
 export default Fetch;
-type Todos = {id:number;title:string}
+ export type Todos = {id:number;title:string}
 
 // const fetchData = async () =>{
 //   const response = await axios.get('https://jsonplaceholder.typicode.com/todos/');

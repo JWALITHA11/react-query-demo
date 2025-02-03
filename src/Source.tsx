@@ -1,13 +1,16 @@
 import React from 'react'
 import { useEffect,useRef,useState,useMemo,useCallback } from 'react'
 import Context  from './Context'
+type ResponseId = {
+  id:number;
+}
 const Source = () => {
 useEffect(
    ()=>{
     const fetchData = async () =>{
         try{
             const data = await fetch('https://jsonplaceholder.typicode.com/todos/');
-            const response=await data.json();
+            const response:ResponseId[]=await data.json();
 
             console.log(response.map((ele)=>ele.id));
         }
@@ -143,7 +146,7 @@ export const ChildComponent: React.FC<{ increment: () => void }> = React.memo(({
   });
 
 const ExampleCounter = () =>{
-    const[data,setData] = useState(0);
+    const[_data,setData] = useState(0);
     const add = () =>{
         setData((data)=>data+1);
         console.log("added");
@@ -157,6 +160,7 @@ const ExampleCounter = () =>{
         <div >
         <button onClick={add} className='btn'style={{marginRight:'10px'}}>ADD</button>
         <button onClick={sub} className='btn'>SUB</button>
+        
         </div>
         <ExampleChild add={add} />
         </>
