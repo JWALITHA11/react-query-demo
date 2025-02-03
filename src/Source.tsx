@@ -1,7 +1,7 @@
 import React from 'react'
-import { useEffect,useRef,useState,useMemo,useCallback } from 'react'
+import { useEffect,useRef,useState,useMemo,useCallback,useLayoutEffect } from 'react'
 import Context  from './Context'
-import Reducer from './Reducer'
+import Reducer, { Reducer2 } from './Reducer'
 type ResponseId = {
   id:number;
 }
@@ -42,6 +42,9 @@ useEffect(
  <CallbackFunction />
  <ExampleCounter />
  <Reducer />
+ <Reducer2 />
+ <UseLayoutEffectExample/>
+ <UseEffectExample/>
  <p>Check the console for the result <button className="btn"onClick={handleClick}>Click</button></p>
  
   </div>
@@ -140,8 +143,8 @@ export const ChildComponent: React.FC<{ increment: () => void }> = React.memo(({
     }
     return(
         <>
-        <button onClick={handleChange}>Click here</button>
-        <button onClick={increment}>Add from Child</button>
+        <button onClick={handleChange} className="btn">Click here</button>
+        <button onClick={increment} className="btn">Add from Child</button>
         </>
     )
     // return ;
@@ -159,12 +162,12 @@ const ExampleCounter = () =>{
     }
     return(
         <>
-        <div >
+        <div className='cart'>
         <button onClick={add} className='btn'style={{marginRight:'10px'}}>ADD</button>
         <button onClick={sub} className='btn'>SUB</button>
-        
-        </div>
         <ExampleChild add={add} />
+        </div>
+      
         </>
     )
 }
@@ -173,7 +176,36 @@ export const ExampleChild : React.FC <{add :()=>void}> = ({add}) =>{
 console.log("I am the child component");
 return(
     <>
-    <button onClick={add} >+ from child</button>
+    <button onClick={add} className="btn">+ from child</button>
     </>
 )
 }
+
+const UseLayoutEffectExample: React.FC = () => {
+  useLayoutEffect(() => {
+    document.title = 'Title changed by useLayoutEffect';
+    console.log("useLayout-TITLE")
+  }, []);
+
+  return (
+    <div >
+      Check the document title!
+    </div>
+  );
+};
+
+export {UseLayoutEffectExample};
+
+const UseEffectExample: React.FC = () => {
+  useEffect(() => {
+    document.title = 'Title changed by useEffect';
+    console.log("UseEffect-TITLE")
+  }, []);
+
+  return (
+    <div style={{marginTop:"10px"}}>
+      Check the document title - UseEffect!
+    </div>
+  );
+};
+export{UseEffectExample}

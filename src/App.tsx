@@ -32,7 +32,7 @@ function App() {
     </BrowserRouter>
    {/* <Practice /> */}
    {/* <FetchById fetchId={14} /> */}
-   <Reducer />
+   
     </>
   )
 }

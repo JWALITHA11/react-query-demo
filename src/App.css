@@ -23,7 +23,7 @@
     background-color: orangered;
     padding: 5px 20px;
     color:aliceblue;
-    gap:20px;
+    margin-left: 20px;
 }
 .nav-items{
     list-style: none;

@@ -56,13 +56,64 @@ const Reducer : React.FC = () =>{
     }
     return(
         <>
+        <div className="cart">
         <input value = {state.name} onChange={handleInputChange} />
-        <button onClick={handleButtonClick}>Increment age</button>
-        <button onClick={loginChange}>Login</button>
+        <button onClick={handleButtonClick} className="btn">Increment age</button>
+        <button onClick={loginChange} className="btn">Login</button>
             {state.isLoggedIn && <p>Welcome, {state.name}!</p>}
 <p> Hi {state.name} you're {state.age} yrs old</p>
+</div>
         </>
     )
 }
 export default Reducer;
 
+type State2 = {
+    count: number;
+}
+
+type Action2 = {
+    type: 'ACTION.INCREASE' | 'ACTION.DECREASE';
+}
+function reducer2(state:State2,action:Action2){
+    switch(action.type){
+        case 'ACTION.INCREASE':
+            return{count:state.count+1};
+ 
+    case 'ACTION.DECREASE':
+            return{count:state.count-1};
+   default :
+   return state;
+}
+}
+const initialVal = {count:0};
+
+
+
+
+
+
+const Reducer2 : React.FC = () =>{
+    const[state,dispatch] = useReducer(reducer2,initialVal);
+    const increaseCount = () =>{
+        dispatch({
+            type:'ACTION.INCREASE'
+        });
+    }
+    const decreaseCount = () =>{
+        dispatch({
+            type:'ACTION.DECREASE'
+        })
+    }
+    return(
+        <>
+        <div className="cart">  <button className="btn" onClick={increaseCount}>+</button>
+        <button className="btn" onClick={decreaseCount}>-</button>
+        <p>Count is : {state.count}</p>
+
+        </div>
+      
+        </>
+    )
+}
+export {Reducer2}
