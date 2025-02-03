@@ -11,7 +11,7 @@ import Source from './Source';
 import Navbar from './Navbar';
 // import Practice from './Practice';
 // import { FetchById } from './Practice';
-import Reducer from './Reducer';
+// import Reducer from './Reducer';
 function App() {
 
   return (
